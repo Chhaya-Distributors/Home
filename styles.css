@@ -9,7 +9,7 @@
 body {
     background-color: #e6f2ff;
     color: #333;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 /* Header */
@@ -17,14 +17,14 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px 30px;
+    padding: 14px 31px;
     background-color: #007bff;
     color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .logo img {
-    height: 50px;
+    height: 49px;
 }
 
 nav ul {
