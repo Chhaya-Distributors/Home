@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order - Prevnar 13</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #e6f2ff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .order-container {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+        }
+
+        .order-container img {
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .order-container h1 {
+            font-size: 28px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .order-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .order-container label {
+            text-align: left;
+            margin: 10px 0 5px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .order-container input,
+        .order-container select,
+        .order-container textarea {
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            outline: none;
+            width: 100%;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .order-container input:focus,
+        .order-container select:focus,
+        .order-container textarea:focus {
+            border-color: #ff6f61;
+            box-shadow: 0 0 8px rgba(255, 111, 97, 0.5);
+        }
+
+        .order-container textarea {
+            resize: vertical;
+            height: 80px;
+        }
+
+        .order-btn {
+            background: linear-gradient(135deg, #ff6f61, #ff4b2b);
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 15px;
+        }
+
+        .order-btn:hover {
+            background: linear-gradient(135deg, #ff4b2b, #ff6f61);
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 15px;
+            color: #777;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="order-container">
+        <img src="https://static.meds.cvpharmacy.in/wp-content/uploads/2024/02/61382-1.png">
+        <h1>Order Prevnar 13</h1>
+        <form id="orderForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" required>
+
+            <label for="address">Delivery Address:</label>
+            <input type="text" id="address" placeholder="Fetching location..." required>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" min="1" required>
+
+            </select>
+
+            <label for="notes">Special Instructions:</label>
+            <textarea id="notes" placeholder="Any special requests?"></textarea>
+
+            <button type="submit" class="order-btn">Place Order</button>
+        </form>
+        <footer>&copy; 2025 Chhaya Distributors</footer>
+    </div>
+
+    <script>
+        // Function to fetch user's location and fill the address field
+        function fetchLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(success, error);
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+    
+        function success(position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+    
+            console.log(`Latitude: ${latitude}, Longitude: ${longitude}`); // Debug
+    
+            // Use OpenCage Data API (make sure to replace YOUR_API_KEY with an actual API key)
+            const apiKey = '7f9adbb823fa4f0ea5c5130982cd5a49'; 
+            const url = `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${apiKey}`;
+    
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    console.log('API Response:', data); // Debug
+    
+                    if (data.results && data.results.length > 0) {
+                        const address = data.results[0].formatted;
+                        document.getElementById('address').value = address;
+                    } else {
+                        alert("Address not found.");
+                    }
+                })
+                .catch(err => {
+                    console.error('Error fetching address:', err);
+                    alert("Error fetching address.");
+                });
+        }
+    
+        function error(err) {
+            console.warn(`ERROR(${err.code}): ${err.message}`);
+            alert("Unable to retrieve your location.");
+        }
+    
+        window.onload = fetchLocation;
+    
+        // Order form submission event
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+    
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+            const quantity = document.getElementById('quantity').value;
+            const notes = document.getElementById('notes').value;
+    
+            const orderDetails = `
+                **New Order: Prevnar 13**
+                - **Name:** ${name}
+                - **Phone:** ${phone}
+                - **Address:** ${address}
+                - **Quantity:** ${quantity}
+                - **Notes:** ${notes || 'None'}
+            `;
+    
+            fetch('https://discord.com/api/webhooks/1353266195121442816/En4pTBJpinAvwOMEyteFU7lyu9uXNOA57J8NRLIxrmkZ8Fxakmi355Z74MH0CZpG4N2V', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ content: orderDetails })
+            }).then(() => {
+                alert('Order placed successfully! we will call you shortly for more details and confirmation');
+                document.getElementById('orderForm').reset();
+            }).catch(err => console.error('Error:', err));
+        });
+    </script>
+</body>
+</html>
