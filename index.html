@@ -4,127 +4,810 @@
     <meta name="google-site-verification" content="EZfINhy8-Vpy5O6XGrzIjOhN1yWkDVNL77RiMS4mnGA" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chhaya Distributors - vaccines</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Chhaya Distributors - Vaccines</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c6fbb;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --gray: #6c757d;
+            --success: #28a745;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --border-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f0f7ff;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        button, .btn {
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 60px;
+            border-radius: 8px;
+        }
+
+        .logo-text {
+            margin-left: 1rem;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0;
+            color: var(--primary);
+        }
+
+        .logo p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 0;
+        }
+
+       
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+       
+        .hero {
+            background: linear-gradient(rgba(44, 111, 187, 0.85), rgba(44, 111, 187, 0.9)), url('https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 6rem 1rem;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background-color: white;
+            color: var(--primary);
+            font-weight: 600;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            background-color: var(--light);
+        }
+
+       
+        .search-container {
+            max-width: 800px;
+            margin: -2rem auto 4rem;
+            position: relative;
+            z-index: 100;
+        }
+
+        .search-bar {
+            display: flex;
+            background: white;
+            border-radius: 50px;
+            padding: 0.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .search-bar button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 0 2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .search-bar button:hover {
+            background: var(--secondary);
+        }
+
+       
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+            border-radius: 2px;
+        }
+
+       
+        .dishes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .dish {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dish:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .dish-img {
+            height: 200px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .dish-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .dish:hover .dish-img img {
+            transform: scale(1.05);
+        }
+
+        .dish-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dish h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .dish p {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .dish button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            padding: 0.8rem;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-top: auto;
+            transition: var(--transition);
+        }
+
+        .dish button:hover {
+            background: var(--secondary);
+        }
+
+       
+        .features {
+            background: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .feature-icon {
+            background: var(--primary);
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .feature h3 {
+            margin-bottom: 1rem;
+        }
+
+       
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-logo {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo img {
+            height: 60px;
+            border-radius: 8px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+
+        
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 90px;
+                right: -100%;
+                flex-direction: column;
+                background: white;
+                width: 100%;
+                max-width: 300px;
+                height: calc(100vh - 90px);
+                padding: 2rem;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                transition: var(--transition);
+                z-index: 1000;
+            }
+            
+            nav ul.active {
+                right: 0;
+            }
+            
+            nav ul li {
+                margin-bottom: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 4rem 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .search-bar {
+                flex-direction: column;
+                border-radius: var(--border-radius);
+            }
+            
+            .search-bar input {
+                border-radius: var(--border-radius) var(--border-radius) 0 0;
+                padding: 1rem;
+            }
+            
+            .search-bar button {
+                border-radius: 0 0 var(--border-radius) var(--border-radius);
+                padding: 1rem;
+            }
+            
+            .dish {
+                max-width: 320px;
+                margin: 0 auto;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="assets/logo.jpg" alt="Chhaya Distributors Logo">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="assets/logo.jpg" alt="Chhaya Distributors Logo">
+                <div class="logo-text">
+                    <h1>Chhaya Distributors</h1>
+                    <p>Quality Vaccines. Trusted Distribution.</p>
+                </div>
+            </div>
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="contact-us/contact-us.html">Contact</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="contact-us/contact-us.html">Contact</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main>
         <section class="hero">
-            <h1>Welcome to Chhaya Distributors</h1>
-            <p>Vaccines at time can save lives</p>
+            <div class="container">
+                <h1>Welcome to Chhaya Distributors</h1>
+                <p>Vaccines at the right time can save lives</p>
+                <a href="#popular" class="hero-btn">Explore Vaccines</a>
+            </div>
         </section>
 
-        <!-- Popular Dishes Section -->
-        <section class="popular-dishes">
-           <div class="search-bar">
-            <input type="text" placeholder="Search...">
+        <div class="container">
+            <div class="search-container">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search vaccines by name, type, or manufacturer...">
+                    <button><i class="fas fa-search"></i> Search</button>
+                </div>
+            </div>
         </div>
-            <h2>Most ordered Vaccines</h2>
-            <div class="dishes-grid">
-                <div class="dish">
-                    <img src="https://qtxasset.com/quartz/qcloud5/media/image/FiercePharma-1507662171/gardasil9.jpg?VersionId=XBGjx5Nvdf8VM1h0Jentt95cfC3nZ523">
-                    <h3>CHCG HP 5000</h3>
-                    <p>₹220</p>
-                    <a href="orders/CHCG_HP_5000.html"><button>BUY NOW</button></a>
-                </div>
-                <div class="dish">
-                    <img src="https://qtxasset.com/quartz/qcloud5/media/image/FiercePharma-1507662171/gardasil9.jpg?VersionId=XBGjx5Nvdf8VM1h0Jentt95cfC3nZ523">
-                    <h3>Gardasil 9</h3>
-                    <p>₹9050</p>
-                    <a href="orders/Gardasil 9.html"><button>BUY NOW</button></a>
-                </div>
-                <div class="dish">
-                    <img src="https://5.imimg.com/data5/SELLER/Default/2024/7/438289455/CQ/VE/DW/71701008/boostrix-vaccine-injection.jpg">
-                    <h3>boostrix</h3>
-                    <p>₹1280</p>
-                    <a href="orders/Boostrix.html"><button>BUY NOW</button></a>
+
+        <section id="popular" class="popular-dishes">
+            <div class="container">
+                <h2 class="section-title">Most Ordered Vaccines</h2>
+                <div class="dishes-grid">
+                    <div class="dish">
+                        <div class="dish-img">
+                            <img src="https://qtxasset.com/quartz/qcloud5/media/image/FiercePharma-1507662171/gardasil9.jpg?VersionId=XBGjx5Nvdf8VM1h0Jentt95cfC3nZ523" alt="CHCG HP 5000">
+                        </div>
+                        <div class="dish-content">
+                            <h3>CHCG HP 5000</h3>
+                            <p>₹220</p>
+                            <a href="orders/CHCG_HP_5000.html"><button>BUY NOW</button></a>
+                        </div>
+                    </div>
+                    <div class="dish">
+                        <div class="dish-img">
+                            <img src="https://qtxasset.com/quartz/qcloud5/media/image/FiercePharma-1507662171/gardasil9.jpg?VersionId=XBGjx5Nvdf8VM1h0Jentt95cfC3nZ523" alt="Gardasil 9">
+                        </div>
+                        <div class="dish-content">
+                            <h3>Gardasil 9</h3>
+                            <p>₹9050</p>
+                            <a href="orders/Gardasil 9.html"><button>BUY NOW</button></a>
+                        </div>
+                    </div>
+                    <div class="dish">
+                        <div class="dish-img">
+                            <img src="https://5.imimg.com/data5/SELLER/Default/2024/7/438289455/CQ/VE/DW/71701008/boostrix-vaccine-injection.jpg" alt="Boostrix">
+                        </div>
+                        <div class="dish-content">
+                            <h3>Boostrix</h3>
+                            <p>₹1280</p>
+                            <a href="orders/Boostrix.html"><button>BUY NOW</button></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- all  -->
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">Why Choose Us</h2>
+                <div class="features-grid">
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Quality Assurance</h3>
+                        <p>All vaccines are sourced directly from manufacturers and stored under optimal conditions.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h3>Fast Delivery</h3>
+                        <p>Guaranteed cold-chain delivery within 24 hours across our service areas.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Expert Support</h3>
+                        <p>Our team of medical professionals provides guidance on vaccine selection and usage.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-rupee-sign"></i>
+                        </div>
+                        <h3>Competitive Pricing</h3>
+                        <p>Best prices guaranteed for hospitals, clinics, and healthcare providers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="all">
-            <h2>Vaccines</h2>
-            <div class="dishes-grid">
-                <div class="dish">
-                    <img src="https://5.imimg.com/data5/SELLER/Default/2024/3/405309936/NO/QL/DH/7169620/influvac-tetra-influenza-vaccine.jpg">
-                    <h3>Influvac tetra</h3>
-                    <p>₹1000</p>
-                    <a href="orders/Influvac_tetra.html"><button>BUY NOW</button></a>
-                </div>
-                <div class="dish">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2jTIO_Hfc20x-DaUULgIhUv-9FyzWi0Q4iQ&s">
-                    <h3>Adacel</h3>
-                    <p>₹1280</p>
-                    <a href="orders/Adacel.html"><button>BUY NOW</button></a>
-                </div>
-                <div class="dish">
-                    <img src="https://static.meds.cvpharmacy.in/wp-content/uploads/2024/02/61382-1.png">
-                    <h3>Prevnar 13</h3>
-                    <p>₹3200</p>
-                    <a href="orders/Prevnar_13.html"><button>BUY NOW</button></a>
-                </div>
-            </div>
-            <div class="dishes-grid">
-                <div class="dish">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs1Dvb6sPmALT2GU8aIh8RdIDdHxR9Y-idGQ&s">
-                    <h3>Cervavac</h3>
-                    <p>₹1445</p>
-                    <a href="orders/Cervavac.html"><button>BUY NOW</button></a>
-                </div>
-                <div class="dish">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDW_vpZwJ6KSqBofYuq8Er2hMIamKqxZZWlQ&s">
-                    <h3>Antid 300</h3>
-                    <p>₹3400</p>
-                    <a href="orders/Antid_300.html"><button>BUY NOW</button></a>
-                </div>
-                <div class="dish">
-                    <img src="https://cdn01.pharmeasy.in/dam/products/A50611/berab-25iu-inj-05ml-2-1641538312.jpg">
-                    <h3>Berab</h3>
-                    <p>₹285</p>
-                    <a href="orders/Berab.html"><button>BUY NOW</button></a>
-                </div>
-            </div>
-            <div class="dishes-grid">
-                <div class="dish">
-                    <img src="https://img1.exportersindia.com/product_images/bc-full/2024/3/6661501/tetanus-vaccine-1710494632-7340085.jpeg">
-                    <h3>Bett plus</h3>
-                    <p>₹21</p>
-                    <a href="orders/Bett_plus.html"><button>BUY NOW</button></a>
-                </div>
-                <div class="dish">
-                    <img src="https://cloudfront-us-east-2.images.arcpublishing.com/reuters/OSUSJWHOG5PY5ONXOA2O2KPNUA.jpg">
-                    <h3>Shingrix</h3>
-                    <p>₹8900</p>
-                    <a href="orders/shingrix.html"><button>BUY NOW</button></a>
-                </div>
-                <div class="dish">
-                    <img src="https://novomedi.com/nexipox/assets/newimg/Packshot.png">
-                    <h3>Nexipox</h3>
-                    <p>₹1750</p>
-                    <a href="orders/nexipox.html"><button>BUY NOW</button></a>
+            <div class="container">
+                <h2 class="section-title">All Vaccines</h2>
+                <div class="dishes-grid">
+                    <div class="dish">
+                        <div class="dish-img">
+                            <img src="https://5.imimg.com/data5/SELLER/Default/2024/3/405309936/NO/QL/DH/7169620/influvac-tetra-influenza-vaccine.jpg" alt="Influvac tetra">
+                        </div>
+                        <div class="dish-content">
+                            <h3>Influvac tetra</h3>
+                            <p>₹1000</p>
+                            <a href="orders/Influvac_tetra.html"><button>BUY NOW</button></a>
+                        </div>
+                    </div>
+                    <div class="dish">
+                        <div class="dish-img">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2jTIO_Hfc20x-DaUULgIhUv-9FyzWi0Q4iQ&s" alt="Adacel">
+                        </div>
+                        <div class="dish-content">
+                            <h3>Adacel</h3>
+                            <p>₹1280</p>
+                            <a href="orders/Adacel.html"><button>BUY NOW</button></a>
+                        </div>
+                    </div>
+                    <div class="dish">
+                        <div class="dish-img">
+                            <img src="https://static.meds.cvpharmacy.in/wp-content/uploads/2024/02/61382-1.png" alt="Prevnar 13">
+                        </div>
+                        <div class="dish-content">
+                            <h3>Prevnar 13</h3>
+                            <p>₹3200</p>
+                            <a href="orders/Prevnar_13.html"><button>BUY NOW</button></a>
+                        </div>
+                    </div>
+                    <div class="dish">
+                        <div class="dish-img">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs1Dvb6sPmALT2GU8aIh8RdIDdHxR9Y-idGQ&s" alt="Cervavac">
+                        </div>
+                        <div class="dish-content">
+                            <h3>Cervavac</h3>
+                            <p>₹1445</p>
+                            <a href="orders/Cervavac.html"><button>BUY NOW</button></a>
+                        </div>
+                    </div>
+                    <div class="dish">
+                        <div class="dish-img">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDW_vpZwJ6KSqBofYuq8Er2hMIamKqxZZWlQ&s" alt="Antid 300">
+                        </div>
+                        <div class="dish-content">
+                            <h3>Antid 300</h3>
+                            <p>₹3400</p>
+                            <a href="orders/Antid_300.html"><button>BUY NOW</button></a>
+                        </div>
+                    </div>
+                    <div class="dish">
+                        <div class="dish-img">
+                            <img src="https://cdn01.pharmeasy.in/dam/products/A50611/berab-25iu-inj-05ml-2-1641538312.jpg" alt="Berab">
+                        </div>
+                        <div class="dish-content">
+                            <h3>Berab</h3>
+                            <p>₹285</p>
+                            <a href="orders/Berab.html"><button>BUY NOW</button></a>
+                        </div>
+                    </div>
+                    <div class="dish">
+                        <div class="dish-img">
+                            <img src="https://img1.exportersindia.com/product_images/bc-full/2024/3/6661501/tetanus-vaccine-1710494632-7340085.jpeg" alt="Bett plus">
+                        </div>
+                        <div class="dish-content">
+                            <h3>Bett plus</h3>
+                            <p>₹21</p>
+                            <a href="orders/Bett_plus.html"><button>BUY NOW</button></a>
+                        </div>
+                    </div>
+                    <div class="dish">
+                        <div class="dish-img">
+                            <img src="https://cloudfront-us-east-2.images.arcpublishing.com/reuters/OSUSJWHOG5PY5ONXOA2O2KPNUA.jpg" alt="Shingrix">
+                        </div>
+                        <div class="dish-content">
+                            <h3>Shingrix</h3>
+                            <p>₹8900</p>
+                            <a href="orders/shingrix.html"><button>BUY NOW</button></a>
+                        </div>
+                    </div>
+                    <div class="dish">
+                        <div class="dish-img">
+                            <img src="https://novomedi.com/nexipox/assets/newimg/Packshot.png" alt="Nexipox">
+                        </div>
+                        <div class="dish-content">
+                            <h3>Nexipox</h3>
+                            <p>₹1750</p>
+                            <a href="orders/nexipox.html"><button>BUY NOW</button></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-
     </main>
 
     <footer>
-        <p>&copy; 2025 Chhaya Distributors. All Rights Reserved.</p>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <img src="assets/logo.jpg" alt="Chhaya Distributors Logo">
+            </div>
+            <div class="footer-links">
+                <a href="#">Home</a>
+                <a href="contact-us/contact-us.html">Contact</a>
+                <a href="#">About Us</a>
+                <a href="#">Services</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p class="copyright">&copy; 2025 Chhaya Distributors. All Rights Reserved.</p>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.innerHTML = navMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+       
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !hamburger.contains(e.target) && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+        
+       
+        const searchInput = document.querySelector('.search-bar input');
+        const dishes = document.querySelectorAll('.dish');
+        
+        searchInput.addEventListener('input', () => {
+            const searchTerm = searchInput.value.toLowerCase();
+            
+            dishes.forEach(dish => {
+                const vaccineName = dish.querySelector('h3').textContent.toLowerCase();
+                if (vaccineName.includes(searchTerm)) {
+                    dish.style.display = 'flex';
+                } else {
+                    dish.style.display = 'none';
+                }
+            });
+        });
+        
+       
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
