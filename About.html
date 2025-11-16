@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Chhaya Distributors</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1a5276;
+        }
+        
+        .logo span {
+            color: #e74c3c;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #1a5276;
+        }
+        
+        .page-header {
+            background-color: #1a5276;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .page-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .about-content {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            color: #1a5276;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .about-text p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+        
+        .highlight-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #1a5276;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        
+        .owner-info {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        .owner-info h3 {
+            color: #1a5276;
+            margin-bottom: 10px;
+        }
+        
+        .owner-info p {
+            margin-bottom: 10px;
+        }
+        
+        .experience-badge {
+            display: inline-block;
+            background-color: #1a5276;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #ecf0f1;
+        }
+        
+        .footer-column p, .footer-column a {
+            color: #bdc3c7;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+        }
+        
+        .footer-column a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #34495e;
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-container">
+            <div class="logo">Chhaya <span>Distributors</span></div>
+            <nav>
+                <ul>
+                    <li><a href="https://chhaya-distributors.github.io/Home/">Home</a></li>
+                    <li><a href="#" class="active">About Us</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <section class="page-header">
+        <div class="container">
+            <h1>About Us</h1>
+            <p>Your trusted partner in vaccine distribution for over 17 years</p>
+        </div>
+    </section>
+
+
+    <section class="about-content">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>Our Story</h2>
+                    <p>Chhaya Distributors has been a cornerstone in the healthcare distribution industry for over 17 years, specializing in the supply of vaccines to medical facilities across the region. Our journey began with a simple mission: to ensure that quality vaccines reach those who need them most.</p>
+                    
+                    <div class="highlight-box">
+                        <p>With our extensive experience and commitment to excellence, we have built strong relationships with healthcare providers and pharmaceutical companies alike. Our dedication to maintaining the cold chain and ensuring product integrity has made us a trusted name in vaccine distribution.</p>
+                    </div>
+                    
+                    <p>We understand the critical importance of timely delivery and proper handling of vaccines, which is why we've implemented rigorous quality control measures throughout our supply chain. Our team of experienced professionals works tirelessly to ensure that every vaccine reaches its destination in perfect condition.</p>
+                    
+                    <div class="owner-info">
+                        <h3>Brahmanand Singh</h3>
+                        <p>Owner & Founder</p>
+                        <p>With over 17 years of experience in the pharmaceutical distribution industry, Mr. Singh has built Chhaya Distributors into a reputable and trusted name in vaccine supply.</p>
+                        <div class="experience-badge">17+ Years Experience</div>
+                    </div>
+                </div>
+                
+                <div class="about-text">
+                    <h2>Our Commitment</h2>
+                    <p>At Chhaya Distributors, we are committed to:</p>
+                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                        <li>Ensuring the highest quality standards in vaccine storage and distribution</li>
+                        <li>Maintaining the cold chain integrity from manufacturer to end-user</li>
+                        <li>Providing timely and reliable delivery services</li>
+                        <li>Building lasting relationships with our clients and partners</li>
+                        <li>Contributing to public health through our services</li>
+                    </ul>
+                    
+                    <h2>Our Location</h2>
+                    <p>Our office is strategically located in Mayur Vihar Phase 3, New Delhi, allowing us to efficiently serve healthcare facilities across the region. This prime location enables us to maintain quick response times and reliable delivery schedules.</p>
+                    
+                    <h2>Looking Forward</h2>
+                    <p>As we continue to grow, we remain dedicated to our core values of integrity, reliability, and excellence. We are constantly exploring new ways to improve our services and expand our reach to serve more communities in need of quality vaccines.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Chhaya Distributors</h3>
+                    <p>Your trusted vaccine supplier with over 17 years of experience in the industry.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p>Office: Mayur Vihar Phase 3, New Delhi</p>
+                    <p>Phone: +91-9811847638</p>
+                    <p>Email: chhayadistributors25@gmail.com</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="https://chhaya-distributors.github.io/Home/">Home</a>
+                    <a href="#">About Us</a>
+                    <a href="https://chhaya-distributors.github.io/Home/">Products</a>
+                    <a href="contact-us/contact-us.html">Contact</a>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Chhaya Distributors. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
