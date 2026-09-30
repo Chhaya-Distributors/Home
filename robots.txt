@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chhaya-distributors.github.io/Home/sitemap.xml
